@@ -3,9 +3,121 @@
 
 <head>
   <title>My Awesome Website</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
-<bod>
-  <h1>My Awesome Website</h1>
-</bod>
+
+<body>
+  <header>
+    <img id="logo" src="images/logo.png" alt="Website icon">
+    <h1 id="name">My Awesome Website</h1>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#software">1. Software</a>
+    <a href="#github">2. GitHub</a>
+    <a href="#first-page">3. First Page</a>
+  </nav>
+
+  <main>
+    <section id="intro">
+      <div class="section-content">
+        <div class="section-left">
+          <div id="photo"><img src="images/shyguy-logo.png" alt="Photo of website">
+          </div>
+        </div>
+        <div class="section-right">
+          <p id="intro-text">This is a very quick and easy tutorial for creating your very own website, for free, with very little technical skill needed. It really is as easy as 1, 2, 3.</p>
+          <ol>
+            <li>Software: You'll need the free VS Code editor and Git software.</li>
+            <li>GitHub: You'll need a free account and a little bit of set up.</li>
+            <li>Web page: Just create and upload a webpage and you are done!</li>
+          </ol>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-divider">
+        <h2>About</h2>
+      </div>
+      <p>Setting up a website can be a complicated and expensive process. But it doesn't have to be! This tutorial shows you how to set up a website completely free and with very little technical skill. Following these steps, you can have a website that looks just like this in about 30 minutes.</p>
+    </section>
+
+
+    <section id="software">
+      <div class="section-divider">
+        <h2>Software</h2>
+      </div>
+      <div class="section-content">
+        <div class="section-left">
+          <img class="left resp-img" src="images/vscode_icon.png" alt="VS Code logo">
+        </div>
+        <div class="section-right">
+          <p>You will need to install two pieces of software, VS Code and Git.</p>
+          <p>Go to this website, <a href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a>, and select the right download option for your computer. Install the software as you would normally and/or follow the steps at this website, <a href="https://code.visualstudio.com/docs/setup/setup-overview#_cross-platform">https://code.visualstudio.com/docs/setup/setup-overview#_cross-platform</a>.</p>
+        </div>
+      </div>
+      <div class="section-content bg-light">
+        <div class="section-left">
+          <img class="resp-img" src="images/git_icon.png" alt="Git icon">
+        </div>
+        <div class="section-right">
+          <p>Install Git from <a target="_blank" href="https://git-scm.com/download"">https://git-scm.com/download</a></p>
+          <p>The installation is pretty straightforward, just accept all the default settings.</p>
+          <p>See <a href=" git.html">this page</a> for learning more about Git.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="github">
+      <div class="section-divider">
+        <h2>GitHub</h2>
+      </div>
+      <div class="section-content">
+        <div class="section-left">
+          <p>This section will show you how to create a free account at <a href="https://github.com">GitHub.com</a> and connect a repository there with VS Code. You can then edit your website in VS Code and easily send the changes to GitHub where it becomes the "live" website.</p>
+          <p>Follow the tutorial at <a href="github-vscode.html">this page</a> to set up GitHub and VS Code.</p>
+        </div>
+        <div class="section-right">
+          <img class="resp-img" src="images/octocat.png" alt="GitHub icon, Octocat">
+        </div>
+      </div>
+    </section>
+
+    <section id="first-page">
+      <div class="section-divider">
+        <h2>First Page</h2>
+      </div>
+      <div class="section-content">
+        <div class="section-left">
+
+        </div>
+        <div class="section-right">
+          <p>Make the first index.html page to upload to GitHub.</p>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <h2>How to Make a Website</h2>
+      <p>&#169; Copyright 2021<br>Ammon Shepherd</p>
+
+    </div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#software">1. Software</a></li>
+      <li><a href="#github">2. GitHub</a></li>
+      <li><a href="#first-page">3. First Page</a></li>
+      <li><a href="mario.html">Mario</a></li>
+    </ul>
+  </footer>
+</body>
 
 </html>
