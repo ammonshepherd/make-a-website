@@ -3,9 +3,13 @@
 
 <head>
   <title>My Awesome Website</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen">
 </head>
 
 <body>
@@ -25,8 +29,7 @@
     <section id="intro">
       <div class="section-content">
         <div class="section-left">
-          <div id="photo"><img src="images/shyguy-logo.png" alt="Photo of website">
-          </div>
+          <img class="left resp-img website" src="images/website.png" alt="Photo of website">
         </div>
         <div class="section-right">
           <p id="intro-text">This is a very quick and easy tutorial for creating your very own website, for free, with very little technical skill needed. It really is as easy as 1, 2, 3.</p>
@@ -94,12 +97,26 @@
       </div>
       <div class="section-content">
         <div class="section-left">
-
         </div>
+
         <div class="section-right">
-          <p>Make the first index.html page to upload to GitHub.</p>
+          <p>OK, Let's make the first web page to upload to GitHub!</p>
 
+          <p>In VS Code, create a new file (just like you did with the README.md file) and name it 'index.html'.</p>
+
+          <p>You can put any plain HTML and CSS in this folder, and it will show up on your website. The 'index.html' file is special. If you do not include a file name in the website address (like this: https://ammonshepherd.github.io/make-a-website/) then the index.html page is shown. If you have a file named, hmmm, how about 'mario.html' then you can view that page at <a href="https://ammonshepherd.github.io/make-a-website/mario.html">https://ammonshepherd.github.io/make-a-website/mario.html</a></p>
+
+          <p>So this 'index.html' page acts as your home page for the site. You can use this code here as a starter: <a href="https://github.com/ammonshepherd/make-a-website/blob/main/mario.html">https://github.com/ammonshepherd/make-a-website/blob/main/mario.html</a></p>
+
+          <p>Just copy and paste the code from that file into your index.html file.</p>
+
+          <p>To get the CSS styles to work, you'll need to create a new file named 'style.css' and copy the CSS code from here: <a href="https://github.com/ammonshepherd/make-a-website/blob/main/style.css">https://github.com/ammonshepherd/make-a-website/blob/main/style.css</a></p>
+
+          <p>With those two files created and saved, now you can stage them, commit them, and push them to your new website.</p>
+
+          <p>Just wait a few minutes for GitHub to process the files, and then you can view them in a browser at your website address!</p>
         </div>
+
       </div>
     </section>
 
@@ -112,7 +129,24 @@
 
         </div>
         <div class="section-right">
-          <p>View the local file in the browser to see changes before making them "live".</p>
+          <p>What if you want to preview the changes before you send them to GitHub? It would be tedious to have every small change follow the stage, commit, push process.</p>
+
+          <p>Fortunately, there is an easy way to view these files while on your computer, make any change you want and instantly see the changes before staging, committing and pushing.</p>
+          <p>For your local development, you just need to view the local file in the browser to see changes before making them "live".</p>
+
+          <p>There are two easy ways to do this:</p>
+          <ol>
+            <li>
+              <p>In the Finder or File Explorer, browse to the index.html file you just created. Select 'Open with' and then select your favorite web browser. You should see the webpage!</p>
+              <p>Now you can make the changes in VS Code, save the file, then refresh the page in your browser to instantly see the changes before staging, committing, and pushing to GitHub.</p>
+            </li>
+            <li>
+              <p>The second option is just as easy. You can install a VS Code Extension (plugin) that gives you the option to open the current file in the browser.</p>
+              <p>Click on the Extension icon in VS Code, and search for 'Open PHP/HTML/JS in Browser' and install the extension by "PrimaFuture". (I know this one works, but if you search for 'open in browser' you'll find a dozen different options.)</p>
+              <p><img class="tut-img" src="images/extension-icon.png" alt="Extension image"></p>
+              <p>Now you can click the secondary mouse button to pull up the context menu, and select the option to open the file in the browser!</p>
+            </li>
+          </ol>
 
         </div>
       </div>
