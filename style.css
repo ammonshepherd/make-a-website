@@ -90,8 +90,9 @@ section {
 #local-dev {
   background-color:plum;
 }
-#local-dev .section-divider h2 {
+#local-dev .section-divider {
   color: #555;
+  text-align: center;
 }
 
 .left {
@@ -196,10 +197,10 @@ footer ul li {
     height: auto;
   }
   .tut-img {
-    max-width: 75vw;
+    max-width: 70vw;
   }
   .website {
-    max-width: 75%;
+    max-width: 70vw;
   }
   .section-content {
     display: flex;
