@@ -1,6 +1,7 @@
 html, body {
   padding: 0;
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .bg-light {
@@ -188,7 +189,6 @@ footer ul li {
 
 @media screen and (min-width: 700px) {
   body {
-    font-size: 1.2em;
   }
   .resp-img {
     width: 100%;
@@ -197,7 +197,7 @@ footer ul li {
     height: auto;
   }
   .tut-img {
-    max-width: 70vw;
+    max-width: 55vw;
   }
   .website {
     max-width: 70vw;
