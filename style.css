@@ -188,8 +188,6 @@ footer ul li {
 }
 
 @media screen and (min-width: 700px) {
-  body {
-  }
   .resp-img {
     width: 100%;
     max-width: 200px;
