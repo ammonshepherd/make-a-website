@@ -24,6 +24,19 @@ header {
   flex-direction: row;
   justify-content: flex-start;
   align-content: stretch;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left:0;
+  height:100px;
+}
+
+main {
+  z-index: 3;
+  margin-top: 190px;
+}
+h1, h2 {
+  scroll-margin-top: 17rem;
 }
 
 .big-button {
@@ -55,6 +68,9 @@ nav {
   justify-content: space-evenly;
   border-top: 1px solid #aaa;
   border-bottom: 2px solid #444;
+  position: fixed;
+  top: 100px;
+  background-color: white;
 }
 
 nav a {
@@ -75,6 +91,7 @@ section {
   min-height: 60vh;
   font-size: 1.6em;
   padding: 40px 15vw;
+  scroll-margin-top: 11rem;
 }
 #intro {
   background-color:paleturquoise;
@@ -187,7 +204,56 @@ footer ul li {
   text-decoration: none;
 }
 
+
+/* https: //www.w3schools.com/howto/howto_css_sidebar_responsive.asp */
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position:fixed;
+  overflow: auto;
+  z-index: 3;
+  top: 150px;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.current-anchor {
+  background-color:darkorange;
+}
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+}
+
 @media screen and (min-width: 700px) {
+  h1, h2 {
+    scroll-margin-top: 13rem;
+  }
+  .sidebar {
+    top: 270px;
+  }
   .resp-img {
     width: 100%;
     max-width: 200px;
@@ -224,5 +290,30 @@ footer ul li {
     background-color:slateblue;
     color:seashell;
     padding: 8px;
+  }
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+  }
+
+  .sidebar a {
+    float: left;
+  }
+
+  div.content {
+    margin-left: 0;
+  }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
   }
 }

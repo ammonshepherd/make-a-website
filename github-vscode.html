@@ -7,6 +7,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+  <script>
+    function addClass(current_link) {
+      current_link.classList.add("current-anchor");
+
+      var links = document.querySelectorAll("a.sidebar-anchor");
+      for (var i = 0; i < links.length; i++) {
+        if (links[i].hash != current_link.hash) {
+          links[i].classList.remove("current-anchor");
+        }
+      }
+    };
+  </script>
 </head>
 
 <body>
@@ -19,155 +32,156 @@
     <a href="index.html#github">Back to main page</a>
   </nav>
 
-  <nav id="sub-menu">
-    <a href="#create-an-account">Create An Account</a>
-    <a href="#create-a-repo">Create A Repo</a>
-    <a href="#github-and-vscode">GitHub and VS Code</a>
-    <a href="#git-workflow">Git Workflow</a>
-    <a href="#the-readme-file">README File</a>
-  </nav>
-
   <main>
+    <div class="sidebar">
+      <a class="sidebar-anchor" onclick="addClass(this)" href="#create-an-account">Create An Account</a>
+      <a class="sidebar-anchor" onclick="addClass(this)" href="#create-a-repo">Create A Repo</a>
+      <a class="sidebar-anchor" onclick="addClass(this)" href="#github-and-vscode">GitHub and VS Code</a>
+      <a class="sidebar-anchor" onclick="addClass(this)" href="#git-workflow">Git Workflow</a>
+      <a class="sidebar-anchor" onclick="addClass(this)" href="#the-readme-file">README File</a>
+    </div>
     <section class="bg-light">
-      <h1 id="github-and-vs-code">GitHub and VS Code</h1>
-      <p>This tutorial will guide you through connecting VS Code to your GitHub account.</p>
-      <p>There are five steps in this tutorial:</p>
-      <ol>
-        <li> <a href="#create-an-account">Create An Account</a> </li>
-        <li> <a href="#create-a-repo">Create A Repo</a> </li>
-        <li> <a href="#github-and-vscode">GitHub and VS Code</a> </li>
-        <li> <a href="#git-workflow">Git Workflow</a> </li>
-        <li> <a href="#the-readme-file">README File</a> </li>
-      </ol>
+      <div class="section-content">
+        <div class="section-right content">
+          <h1 id="github-and-vs-code">GitHub and VS Code</h1>
+          <p>This tutorial will guide you through connecting VS Code to your GitHub account.</p>
+          <p>There are five steps in this tutorial:</p>
+          <ol>
+            <li> <a href="#create-an-account">Create An Account</a> </li>
+            <li> <a href="#create-a-repo">Create A Repo</a> </li>
+            <li> <a href="#github-and-vscode">GitHub and VS Code</a> </li>
+            <li> <a href="#git-workflow">Git Workflow</a> </li>
+            <li> <a href="#the-readme-file">README File</a> </li>
+          </ol>
 
-      <p>GitHub is an online service that hosts your Git repositories. It can also provide a social aspect to your code. It is used by pretty much all major software companies. GitHub is not the only service out there, but it is the most well known. Others include <a href="https://about.gitlab.com/">GitLab</a>, <a href="https://bitbucket.org/product">Bitbucket</a>, and <a href="https://sourceforge.net/">Sourceforge</a></p>
+          <p>GitHub is an online service that hosts your Git repositories. It can also provide a social aspect to your code. It is used by pretty much all major software companies. GitHub is not the only service out there, but it is the most well known. Others include <a href="https://about.gitlab.com/">GitLab</a>, <a href="https://bitbucket.org/product">Bitbucket</a>, and <a href="https://sourceforge.net/">Sourceforge</a></p>
 
-      <p>Using GitHub adds one more step to the normal Git workflow:
-      <ol>
-        <li>Make changes to your code (edit, add or delete files and folders)</li>
-        <li>Stage the files and folders you want to commit</li>
-        <li>Commit the changes</li>
-        <li>Push the commit to GitHub</li>
-      </ol>
-      </p>
+          <p>Using GitHub adds one more step to the normal Git workflow:
+          <ol>
+            <li>Make changes to your code (edit, add or delete files and folders)</li>
+            <li>Stage the files and folders you want to commit</li>
+            <li>Commit the changes</li>
+            <li>Push the commit to GitHub</li>
+          </ol>
+          </p>
 
 
-      <h2 id="create-an-account">Create an account</h2>
-      <p>The first step is to create an account at <a href="https://github.com/">GitHub.com</a>. </p>
-      <ul>
-        <li>Visit <a target="_blank" href="https://github.com">https://github.com</a> in a browser.</li>
-        <li>Click the Sign up button.</li>
-        <li>Fill in the required fields for a unique username, email and password. You can uncheck the spam box – er, I mean Email preferences checkbox.</li>
-        <li>Complete the "puzzle" by clicking the <u>Verify</u> button, then selecting the right images.</li>
-        <li>Finally, click the big blue <u>Create account</u> button.</li>
-      </ul>
-      <img class="tut-img" src="images/github-vscode/github-signup.png" alt="GitHub sign up page" />
-
-      <p>You will need to verify your email address before you can create a new repository. Check your email for the verify link.</p>
-
-      <h2 id="create-a-repo">Create a repo</h2>
-      <p>The next step is to create a new repository. A repository is the folder that holds the code. In our case, this is where we will put the code for building the website.</p>
-
-      <img class="tut-img" src="images/github-vscode/repository.png" alt="Repository link" />
-      <p>On the GitHub website, after you have logged in,</p>
-      <ul>
-        <li>Click on your profile icon on the top right of the page.</li>
-        <li>Click the <u>Your repositories</u> link, then click the green <u>New</u> button.
+          <h2 id="create-an-account">Create an account</h2>
+          <p>The first step is to create an account at <a href="https://github.com/">GitHub.com</a>. </p>
           <ul>
-            <li>Alternatively, if you are on the profile page already, click the <u>Repositories</u> tab, then click the green <u>New</u> button.</li>
+            <li>Visit <a target="_blank" href="https://github.com">https://github.com</a> in a browser.</li>
+            <li>Click the Sign up button.</li>
+            <li>Fill in the required fields for a unique username, email and password. You can uncheck the spam box – er, I mean Email preferences checkbox.</li>
+            <li>Complete the "puzzle" by clicking the <u>Verify</u> button, then selecting the right images.</li>
+            <li>Finally, click the big blue <u>Create account</u> button.</li>
           </ul>
-        </li>
-        <img class="tut-img" src="images/github-vscode/new-repo-button.png" alt="New repo button" />
-        <li>On the New repository page, name the repository anything you like. This will be part of the URL or website address.</li>
-        <li>Fill in a description if you like.</li>
-        <li>Check the "Public" option. Leave the remaining checkboxes empty.</li>
-        <li>Click the green <u>Create repository</u> button.</li>
-      </ul>
-      <img class="tut-img" src="images/github-vscode/create-new-repo.png" alt="Create new repo page" />
+          <img class="tut-img" src="images/github-vscode/github-signup.png" alt="GitHub sign up page" />
 
-      <p>You are now taken to the repository page for the repository you just created. Do not browse away from this page yet, as we will need a URL from this page later.</p>
-      <img class="tut-img" src="images/github-vscode/new-repo-page.png" alt="New repo page" />
+          <p>You will need to verify your email address before you can create a new repository. Check your email for the verify link.</p>
 
+          <h2 id="create-a-repo">Create a repo</h2>
+          <p>The next step is to create a new repository. A repository is the folder that holds the code. In our case, this is where we will put the code for building the website.</p>
 
-      <h2 id="github-and-vscode">GitHub and VS Code</h2>
-      <p>Open VS Code. You should have done some initial setting up of VS Code already. The ability to use Git is built into VS Code. There is no plug-in or extension needed to use VS Code with Git or with GitHub.</p>
+          <img class="tut-img" src="images/github-vscode/repository.png" alt="Repository link" />
+          <p>On the GitHub website, after you have logged in,</p>
+          <ul>
+            <li>Click on your profile icon on the top right of the page.</li>
+            <li>Click the <u>Your repositories</u> link, then click the green <u>New</u> button.
+              <ul>
+                <li>Alternatively, if you are on the profile page already, click the <u>Repositories</u> tab, then click the green <u>New</u> button.</li>
+              </ul>
+            </li>
+            <img class="tut-img" src="images/github-vscode/new-repo-button.png" alt="New repo button" />
+            <li>On the New repository page, name the repository anything you like. This will be part of the URL or website address.</li>
+            <li>Fill in a description if you like.</li>
+            <li>Check the "Public" option. Leave the remaining checkboxes empty.</li>
+            <li>Click the green <u>Create repository</u> button.</li>
+          </ul>
+          <img class="tut-img" src="images/github-vscode/create-new-repo.png" alt="Create new repo page" />
 
-
-      <h3>Set up remote Git repo</h3>
-      <p>The first step is to open a new VS Code window with <u>File->New Window</u>. You can close the other VS Code window. It will not be needed anymore.</p>
-      <p>Notice the Git icon on the left sidebar. Click on that.</p>
-      <p><img class="tut-img" src="images/github-vscode/new-vscode-window.png" alt="New VS Code window" /></p>
-
-      <p>You should see two pink colored buttons; one for <u>Open Folder</u> and one for <u>Clone Repository.</u> Click on the <u>Clone Repository</u> button. This opens the VS Code Command Prompt. </p>
-      <p><img class="tut-img" src="images/github-vscode/git-open-repo.png" alt="Clone Repository button" /></p>
-
-      <p>Click on the dropdown option <u>Clone from GitHub</u>.</p>
-      <p><img class="tut-img" src="images/github-vscode/clone-from-github.png" alt="Clone from GitHub button" /></p>
-
-      <p>A pop-up will ask if you want to allow the extension to sign in to GitHub. Click the <u>Allow</u> button. </p>
-      <p><img class="tut-img" src="images/github-vscode/allow-github.png" alt="Clone Repository button" /></p>
-
-      <p>Your browser will then open with a page asking you to continue authorization of VS Code to access GitHub. Click the big green <u>Continue</u> button.</p>
-      <p><img class="tut-img" src="images/github-vscode/authorize-vscode.png" alt="Click the big green button" /></p>
-
-      <p>You'll see a success message with an alert box. Click the <u>Open Link</u> button.</p>
-      <p><img class="tut-img" src="images/github-vscode/open-link.png" alt="Open the link" /></p>
-
-      <p>This sends you back to VS Code with a prompt to allow the extension to open the URI (the address). Click <u>Open</u>.</p>
-      <p><img class="tut-img" src="images/github-vscode/vscode-open.png" alt="VS Code Open" /></p>
-
-      <p>After a second, you will see a drop down with all the repos in your GitHub account available.</p>
-      <p>If the repos are not showing as options, then make sure you have authorized VS Code to access GitHub as done above.</p>
-
-      <p>Pick the repo you just created.</p>
-      <p><img class="tut-img" src="images/github-vscode/pick-repo.png" alt="Pick your repo" /></p>
-
-      <p>If the repo does not show up, you can type in your GitHub account name followed by the repo name: <code>username/repo-name</code> Click on that option.</p>
-      <p><img class="tut-img" src="images/github-vscode/type-repo.png" alt="Type your GitHub username followed by repo name" /></p>
-
-      <p>Next, VS Code will ask you to select a location on your computer to put the files. Browse to your project folder, for example <code>Documents/cool-website/</code>.</p>
-
-      <p>Now select the folder and click the Select Repository Location button.</p>
-      <p><img class="tut-img" src="images/github-vscode/select-location.png" alt="Select a location to put your files" /></p>
-
-      <p>Next click the <u>Open</u> or <u>Open in New Window</u> button on the VS Code notification pop-up. If the notification disappeared before you could click on it, you can click the little bell icon to get the notification to reappear.</p>
-      <p><img class="tut-img" src="images/github-vscode/open-in-vscode.png" alt="Open or Open in New Window" /></p>
-
-      <p> Or you can click on the <u>Open Folder</u> button and browse to the folder you selected before and select that folder. This is the process for opening this folder from this point on if the VS Code application is closed.</p>
-      <p><img class="tut-img" src="images/github-vscode/open-phpmotors-folder.png" alt="Open Folder, browse to phpmotors folder" /></p>
-
-      <p>Now VS Code is connected to the GitHub repo and we can start adding files in VS Code.</p>
+          <p>You are now taken to the repository page for the repository you just created. Do not browse away from this page yet, as we will need a URL from this page later.</p>
+          <img class="tut-img" src="images/github-vscode/new-repo-page.png" alt="New repo page" />
 
 
-      <h2 id="git-workflow">Git Workflow</h2>
-      <p>Now is a good time to remind you of the workflow you will be using as you create your website.</p>
-
-      <p>Normally, when working with a version control software, you want to work on small discrete chunks of code. After each feature or chunk is complete, you submit that to the version control software as a commit.</p>
-
-      <p>Simply stated, the workflow is:
-      <ol>
-        <li>Work on one aspect of the website</li>
-        <li>Stage and then commit the changes</li>
-        <li>Work on another aspect of the website</li>
-        <li>Stage and then commit the changes</li>
-        <li>Push the changes to your GitHub repo when done making changes</li>
-      </ol>
-
-      </p>
-
-      <p>We'll walk through that process by adding a helpful file, called a README file that is used to explain what the repo is all about.</p>
+          <h2 id="github-and-vscode">GitHub and VS Code</h2>
+          <p>Open VS Code. You should have done some initial setting up of VS Code already. The ability to use Git is built into VS Code. There is no plug-in or extension needed to use VS Code with Git or with GitHub.</p>
 
 
-      <h2 id="the-readme-file">The README file</h2>
-      <p>Back in VS Code, make a new file by clicking on the new file icon, or go to the File menu and click <u>New File</u>. Name the file <code>README.md</code> The <code>.md</code> is the file extension for Markdown files. GitHub will know what to do with it.</p>
-      <p><img class="tut-img" src="images/github-vscode/readme-file.png" alt="New file button" /></p>
+          <h3>Set up remote Git repo</h3>
+          <p>The first step is to open a new VS Code window with <u>File->New Window</u>. You can close the other VS Code window. It will not be needed anymore.</p>
+          <p>Notice the Git icon on the left sidebar. Click on that.</p>
+          <p><img class="tut-img" src="images/github-vscode/new-vscode-window.png" alt="New VS Code window" /></p>
 
-      <p>We'll use Markdown in this file, which is like a distant cousin to HTML. It makes text readable as plain text, but still has some syntax that allows computers to alter the display of the text, just like HTML.</p>
+          <p>You should see two pink colored buttons; one for <u>Open Folder</u> and one for <u>Clone Repository.</u> Click on the <u>Clone Repository</u> button. This opens the VS Code Command Prompt. </p>
+          <p><img class="tut-img" src="images/github-vscode/git-open-repo.png" alt="Clone Repository button" /></p>
 
-      <p>To learn more about the Markdown language, see here: <a target="_blank" href="https://guides.github.com/features/mastering-markdown/">https://guides.github.com/features/mastering-markdown/</a></p>
+          <p>Click on the dropdown option <u>Clone from GitHub</u>.</p>
+          <p><img class="tut-img" src="images/github-vscode/clone-from-github.png" alt="Clone from GitHub button" /></p>
 
-      <p>In this new file type in some text to explain what this repository contains:</p>
-      <pre><code> 
+          <p>A pop-up will ask if you want to allow the extension to sign in to GitHub. Click the <u>Allow</u> button. </p>
+          <p><img class="tut-img" src="images/github-vscode/allow-github.png" alt="Clone Repository button" /></p>
+
+          <p>Your browser will then open with a page asking you to continue authorization of VS Code to access GitHub. Click the big green <u>Continue</u> button.</p>
+          <p><img class="tut-img" src="images/github-vscode/authorize-vscode.png" alt="Click the big green button" /></p>
+
+          <p>You'll see a success message with an alert box. Click the <u>Open Link</u> button.</p>
+          <p><img class="tut-img" src="images/github-vscode/open-link.png" alt="Open the link" /></p>
+
+          <p>This sends you back to VS Code with a prompt to allow the extension to open the URI (the address). Click <u>Open</u>.</p>
+          <p><img class="tut-img" src="images/github-vscode/vscode-open.png" alt="VS Code Open" /></p>
+
+          <p>After a second, you will see a drop down with all the repos in your GitHub account available.</p>
+          <p>If the repos are not showing as options, then make sure you have authorized VS Code to access GitHub as done above.</p>
+
+          <p>Pick the repo you just created.</p>
+          <p><img class="tut-img" src="images/github-vscode/pick-repo.png" alt="Pick your repo" /></p>
+
+          <p>If the repo does not show up, you can type in your GitHub account name followed by the repo name: <code>username/repo-name</code> Click on that option.</p>
+          <p><img class="tut-img" src="images/github-vscode/type-repo.png" alt="Type your GitHub username followed by repo name" /></p>
+
+          <p>Next, VS Code will ask you to select a location on your computer to put the files. Browse to your project folder, for example <code>Documents/cool-website/</code>.</p>
+
+          <p>Now select the folder and click the Select Repository Location button.</p>
+          <p><img class="tut-img" src="images/github-vscode/select-location.png" alt="Select a location to put your files" /></p>
+
+          <p>Next click the <u>Open</u> or <u>Open in New Window</u> button on the VS Code notification pop-up. If the notification disappeared before you could click on it, you can click the little bell icon to get the notification to reappear.</p>
+          <p><img class="tut-img" src="images/github-vscode/open-in-vscode.png" alt="Open or Open in New Window" /></p>
+
+          <p> Or you can click on the <u>Open Folder</u> button and browse to the folder you selected before and select that folder. This is the process for opening this folder from this point on if the VS Code application is closed.</p>
+          <p><img class="tut-img" src="images/github-vscode/open-phpmotors-folder.png" alt="Open Folder, browse to phpmotors folder" /></p>
+
+          <p>Now VS Code is connected to the GitHub repo and we can start adding files in VS Code.</p>
+
+
+          <h2 id="git-workflow">Git Workflow</h2>
+          <p>Now is a good time to remind you of the workflow you will be using as you create your website.</p>
+
+          <p>Normally, when working with a version control software, you want to work on small discrete chunks of code. After each feature or chunk is complete, you submit that to the version control software as a commit.</p>
+
+          <p>Simply stated, the workflow is:
+          <ol>
+            <li>Work on one aspect of the website</li>
+            <li>Stage and then commit the changes</li>
+            <li>Work on another aspect of the website</li>
+            <li>Stage and then commit the changes</li>
+            <li>Push the changes to your GitHub repo when done making changes</li>
+          </ol>
+
+          </p>
+
+          <p>We'll walk through that process by adding a helpful file, called a README file that is used to explain what the repo is all about.</p>
+
+
+          <h2 id="the-readme-file">The README file</h2>
+          <p>Back in VS Code, make a new file by clicking on the new file icon, or go to the File menu and click <u>New File</u>. Name the file <code>README.md</code> The <code>.md</code> is the file extension for Markdown files. GitHub will know what to do with it.</p>
+          <p><img class="tut-img" src="images/github-vscode/readme-file.png" alt="New file button" /></p>
+
+          <p>We'll use Markdown in this file, which is like a distant cousin to HTML. It makes text readable as plain text, but still has some syntax that allows computers to alter the display of the text, just like HTML.</p>
+
+          <p>To learn more about the Markdown language, see here: <a target="_blank" href="https://guides.github.com/features/mastering-markdown/">https://guides.github.com/features/mastering-markdown/</a></p>
+
+          <p>In this new file type in some text to explain what this repository contains:</p>
+          <pre><code> 
 # My Awesome Website
 This is the repository for my really cool website.
 
@@ -175,50 +189,55 @@ You can see the real thing here:
 https://username.github.io/repository-name
       </code></pre>
 
-      <p>Save the file.</p>
+          <p>Save the file.</p>
 
-      <p>Now once you save the file, you should notice some things with Git icon on the left side menu. The Git icon now has a number, signifying that it now recognizes that one file has been changed.</p>
-      <p><img class="tut-img" src="images/github-vscode/git-icon-change.png" alt="Git icon has changed" /></p>
+          <p>Now once you save the file, you should notice some things with Git icon on the left side menu. The Git icon now has a number, signifying that it now recognizes that one file has been changed.</p>
+          <p><img class="tut-img" src="images/github-vscode/git-icon-change.png" alt="Git icon has changed" /></p>
 
-      <p>If you click on the Git icon, a sidebar opens to display Git info. In this panel, you can stage the changes for a commit, add a message, commit the changes, and even push them to the GitHub repo.</p>
-      <p> <img class="tut-img" src="images/github-vscode/git-icons.png" alt="Icons for revert, stage and commit" /> </p>
+          <p>If you click on the Git icon, a sidebar opens to display Git info. In this panel, you can stage the changes for a commit, add a message, commit the changes, and even push them to the GitHub repo.</p>
+          <p> <img class="tut-img" src="images/github-vscode/git-icons.png" alt="Icons for revert, stage and commit" /> </p>
 
-      <p>Note: If you discard the changes (the revert icon), then all the changes you made to the file will be lost and the file will revert back to how it was before you made any changes. This is permanent and there is no way to get the changes back.</p>
+          <p>Note: If you discard the changes (the revert icon), then all the changes you made to the file will be lost and the file will revert back to how it was before you made any changes. This is permanent and there is no way to get the changes back.</p>
 
-      <p>Before we can make a Git commit, Git needs a name and email to associate with the commit. This will set the name and email in Git's global settings, so you only need to do this once. To do this, open the Terminal in VS Code (Terminal->New Terminal or View->Appearance->Show Panel).</p>
-      <p>Type in the following command (but use your name) and hit Enter on the keyboard</p>
-      <p><code>git config --global user.name "FIRSTNAME LASTNAME"</code></p>
+          <p>Before we can make a Git commit, Git needs a name and email to associate with the commit. This will set the name and email in Git's global settings, so you only need to do this once. To do this, open the Terminal in VS Code (Terminal->New Terminal or View->Appearance->Show Panel).</p>
+          <p>Type in the following command (but use your name) and hit Enter on the keyboard</p>
+          <p><code>git config --global user.name "FIRSTNAME LASTNAME"</code></p>
 
-      <p>Type in the following command (but use your email address) and hit Enter on the keyboard</p>
-      <p><code>git config --global user.email "youremail@email.com"</code></p>
-      <p> <img class="tut-img" src="images/github-vscode/git-globals.png" alt="Add name and email to Git" /> </p>
-
-
-      <p>Stage the changes for a commit by pressing the plus icon.</p>
-
-      <p>To commit the changes, first type in a short message, then click the check mark or use the short-cut keys (command-Enter on Mac, Ctrl-Enter on Windows).</p>
-      <p>Once you have committed the changes, you can push the changes to the GitHub repo. Click on the three-dots icon and select <u>Push</u>.</p>
-      <p> <img class="tut-img" src="images/github-vscode/git-push.png" alt="" /> </p>
-      <p>You may be asked if you wish to periodically fetch new changes from GitHub. You don't want this, so select "No".</p>
-
-      <p>If you go to the GitHub website in your browser and refresh the page, you should see the README.md file is now listed as a file, and the contents are displayed below.</p>
-      <p><img class="tut-img" src="images/github-vscode/github-repo-updated.png" alt="GitHub repo page updated" /></p>
+          <p>Type in the following command (but use your email address) and hit Enter on the keyboard</p>
+          <p><code>git config --global user.email "youremail@email.com"</code></p>
+          <p> <img class="tut-img" src="images/github-vscode/git-globals.png" alt="Add name and email to Git" /> </p>
 
 
-      <h2>All set</h2>
-      <p>You are now all set up with a GitHub repository and your VS Code app is now connected to the repo.</p>
-      <p>As a reminder, the workflow for updating your website:</p>
-      <ol>
-        <li>Make some edits to the files</li>
-        <li>Stage and then commit the changes</li>
-        <li>Push the changes to your GitHub repo</li>
-        <li>Wait for a few minutes for your changes to appear on your website</li>
-      </ol>
+          <p>Stage the changes for a commit by pressing the plus icon.</p>
 
-      <p>Head back to the main page for the next step!</p>
-      <button class="big-button"><a href="index.html#github"> &lArr; Main Page</a></button>
+          <p>To commit the changes, first type in a short message, then click the check mark or use the short-cut keys (command-Enter on Mac, Ctrl-Enter on Windows).</p>
+          <p>Once you have committed the changes, you can push the changes to the GitHub repo. Click on the three-dots icon and select <u>Push</u>.</p>
+          <p> <img class="tut-img" src="images/github-vscode/git-push.png" alt="" /> </p>
+          <p>You may be asked if you wish to periodically fetch new changes from GitHub. You don't want this, so select "No".</p>
+
+          <p>If you go to the GitHub website in your browser and refresh the page, you should see the README.md file is now listed as a file, and the contents are displayed below.</p>
+          <p><img class="tut-img" src="images/github-vscode/github-repo-updated.png" alt="GitHub repo page updated" /></p>
 
 
+          <h2>All set</h2>
+          <p>You are now all set up with a GitHub repository and your VS Code app is now connected to the repo.</p>
+          <p>As a reminder, the workflow for updating your website:</p>
+          <ol>
+            <li>Make some edits to the files</li>
+            <li>Stage and then commit the changes</li>
+            <li>Push the changes to your GitHub repo</li>
+            <li>Wait for a few minutes for your changes to appear on your website</li>
+          </ol>
+
+          <p>Head back to the main page for the next step!</p>
+          <button class="big-button"><a href="index.html#github"> &lArr; Main Page</a></button>
+
+
+        </div>
+      </div>
+    </section>
+
+    <section id="tips">
       <h2>Troubleshooting Tips</h2>
       <dl>
         <dt>Error: If you try to clone the repository, but it fails to create the <code>phpmotors</code> folder...</dt>
@@ -227,10 +246,10 @@ https://username.github.io/repository-name
           <p><code>git clone https://github.com/YOUR_USER_NAME_HERE/phpmotors.git phpmotors</code> </p>
           <p>
             If you get an error like this:
-          <pre>
-remote: Repository not found.
-fatal: repository 'https://github.com/MyRepo/project.git/' not found
-</pre>
+          <p>
+            remote: Repository not found.
+            fatal: repository 'https://github.com/MyRepo/project.git/' not found
+          </p>
 
           Then type in </p>
           <p><code>git credential-manager uninstall</code></p>
