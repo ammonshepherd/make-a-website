@@ -238,27 +238,31 @@ https://username.github.io/repository-name
     </section>
 
     <section id="tips">
-      <h2>Troubleshooting Tips</h2>
-      <dl>
-        <dt>Error: If you try to clone the repository, but it fails to create the <code>phpmotors</code> folder...</dt>
-        <dd>
-          <p>Fix: Try to clone the GitHub repo from the VS Code Terminal. Open VS Code and open the /Documents/cse340/www/ folder. Open the Terminal (Terminal -> New Terminal), and type in </p>
-          <p><code>git clone https://github.com/YOUR_USER_NAME_HERE/phpmotors.git phpmotors</code> </p>
-          <p>
-            If you get an error like this:
-          <p>
-            remote: Repository not found.
-            fatal: repository 'https://github.com/MyRepo/project.git/' not found
-          </p>
+      <div class="section-content">
+        <div class="section-right content">
+          <h2>Troubleshooting Tips</h2>
+          <dl>
+            <dt>Error: If you try to clone the repository, but it fails to create the <code>phpmotors</code> folder...</dt>
+            <dd>
+              <p>Fix: Try to clone the GitHub repo from the VS Code Terminal. Open VS Code and open the /Documents/cse340/www/ folder. Open the Terminal (Terminal -> New Terminal), and type in </p>
+              <p><code>git clone https://github.com/YOUR_USER_NAME_HERE/phpmotors.git phpmotors</code> </p>
+              <p>
+                If you get an error like this:
+              <p>
+                remote: Repository not found.
+                fatal: repository 'https://github.com/MyRepo/project.git/' not found
+              </p>
 
-          Then type in </p>
-          <p><code>git credential-manager uninstall</code></p>
-          <p> followed by </p>
-          <p><code>git credential-manager install</code></p>
+              Then type in </p>
+              <p><code>git credential-manager uninstall</code></p>
+              <p> followed by </p>
+              <p><code>git credential-manager install</code></p>
 
-          <p>Then re-run the git clone command above.</p>
-        </dd>
-      </dl>
+              <p>Then re-run the git clone command above.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
     </section>
 
   </main>
