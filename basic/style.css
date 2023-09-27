@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: lightblue;
+}
+
+main {
+    width: 80vw;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border: 2px solid grey;
+    border-radius: 9px;
+}
