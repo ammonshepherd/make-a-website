@@ -4,6 +4,21 @@ body {
     background: lightblue;
 }
 
+header {
+    width: 80vw;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: lightgreen;
+    border: 2px solid darkgreen;
+    border-radius: 9px;
+}
+
+#title {
+    font-size: 3em;
+    font-family: sans-serif;
+}
+
 main {
     width: 80vw;
     margin: auto;
@@ -11,4 +26,9 @@ main {
     background: white;
     border: 2px solid grey;
     border-radius: 9px;
+}
+
+#shyguy {
+    width: 150px;
+    vertical-align: middle;
 }
